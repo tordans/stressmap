@@ -1,4 +1,4 @@
-const map = L.map('mapid').setView([45.3901848, -75.7456261], 15)
+const map = L.map('mapid').setView([52.5173, 13.3889], 10)
 const settings = [{ color: '#0099cc', weight: 3, key: 'LTS1', zIndex: 1, title: 'LTS 1 - Suitable for Children', url: 'data/level_1.json' },
                 { color: '#1C7C54', weight: 3, key: 'LTS2', zIndex: 2, title: 'LTS 2 - Low Stress', url: 'data/level_2.json' },
                 { color: '#F0C808', weight: 3, key: 'LTS3', zIndex: 3, title: 'LTS 3 - Moderate Stress', url: 'data/level_3.json' },
