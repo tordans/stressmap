@@ -1,8 +1,20 @@
-const map = L.map('mapid').setView([52.5173, 13.3889], 10)
-const settings = [{ color: '#0099cc', weight: 3, key: 'LTS1', zIndex: 1, title: 'LTS 1 - Suitable for Children', url: 'data/level_1.json' },
-                { color: '#1C7C54', weight: 3, key: 'LTS2', zIndex: 2, title: 'LTS 2 - Low Stress', url: 'data/level_2.json' },
-                { color: '#F0C808', weight: 3, key: 'LTS3', zIndex: 3, title: 'LTS 3 - Moderate Stress', url: 'data/level_3.json' },
-                { color: '#DD5454', weight: 3, key: 'LTS4', zIndex: 4, title: 'LTS 4 - High Stress', url: 'data/level_4.json' }]
+var urlParams = new URLSearchParams(window.location.search);
+
+var town = urlParams.get('town');
+var map;
+if (town == null) {
+	town = "";
+	map = L.map('mapid').setView([52.5173, 13.3889], 10)
+} else if (town == 'neuss') {
+	map = L.map('mapid').setView([51.2019, 6.6857], 14)
+} else if (town == 'duesseldorf') {
+	map = L.map('mapid').setView([51.4831, 6.6028], 9)
+}
+
+const settings = [{ color: '#0099cc', weight: 3, key: 'LTS1', zIndex: 1, title: 'LTS 1 - Suitable for Children', url: 'data/' + town + '/level_1.json' },
+                { color: '#1C7C54', weight: 3, key: 'LTS2', zIndex: 2, title: 'LTS 2 - Low Stress', url: 'data/' + town + '/level_2.json' },
+                { color: '#F0C808', weight: 3, key: 'LTS3', zIndex: 3, title: 'LTS 3 - Moderate Stress', url: 'data/' + town + '/level_3.json' },
+                { color: '#DD5454', weight: 3, key: 'LTS4', zIndex: 4, title: 'LTS 4 - High Stress', url: 'data/' + town + '/level_4.json' }]
 const homePage = 'https://bikeottawa.ca/index.php/advocacy/advocacy-news/213-data_group'
 const legendTitle = 'Cycling Stress Map'
 const layers = {}
