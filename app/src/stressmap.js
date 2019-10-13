@@ -221,7 +221,8 @@ function getFeaturesNearby(point, maxMeters, breakOnFirst)
 }
 
 
-function displayOsmElementInfo(element, latlng) {
+function displayOsmElementInfo(feature, latlng) {
+  element = feature.id
 
   const xhr = new XMLHttpRequest()
   xhr.open('GET','https://api.openstreetmap.org/api/0.6/'+element)
@@ -237,6 +238,7 @@ function displayOsmElementInfo(element, latlng) {
     } else {
       popup += 'Failed to request details from osm.org';
     }
+    popup += '<b>Message:</b> ' + feature.message;
     map.openPopup(popup, latlng);
   }
   xhr.send()
@@ -265,7 +267,7 @@ map.on('click', function(e) {
   }
   const features = getFeaturesNearby([e.latlng.lng,e.latlng.lat], 5, true);
   if (features.length!=0) {
-    displayOsmElementInfo(features[0].id, e.latlng);
+    displayOsmElementInfo(features[0], e.latlng);
     highlight = new L.geoJson(features[0],{style: {color:'#df42f4',  weight: 5}}).addTo(map);
     map.on('popupclose', function() {
      map.removeLayer(highlight)
