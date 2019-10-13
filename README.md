@@ -6,5 +6,6 @@ Current Examples:
 * Berlin https://ckrey.github.io/stressmap/app/index.html (Default)
 * Neuss https://ckrey.github.io/stressmap/app/index.html?town=neuss
 * Düsseldorf https://ckrey.github.io/stressmap/app/index.html?town=duesseldorf
-* Köln / Aachen _coming soon_
+* Köln / Aachen https://ckrey.github.io/stressmap/app/index.html?town=koeln
+* Hamburg https://ckrey.github.io/stressmap/app/index.html?town=hamburg
 * _others? – create a Issue/PR_
