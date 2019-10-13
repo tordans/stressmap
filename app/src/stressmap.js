@@ -9,6 +9,12 @@ if (town == null) {
 	map = L.map('mapid').setView([51.2019, 6.6857], 14)
 } else if (town == 'duesseldorf') {
 	map = L.map('mapid').setView([51.4831, 6.6028], 9)
+} else if (town == 'koeln') {
+	map = L.map('mapid').setView([50.9976, 6.8409], 9)
+} else if (town == 'hamburg') {
+	map = L.map('mapid').setView([53.5586, 10.0785], 10)
+} else {
+	map = L.map('mapid').setView([52.5173, 13.3889], 10)
 }
 
 const settings = [{ color: '#0099cc', weight: 3, key: 'LTS1', zIndex: 1, title: 'LTS 1 - Suitable for Children', url: 'data/' + town + '/level_1.json' },
