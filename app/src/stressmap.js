@@ -238,7 +238,7 @@ function displayOsmElementInfo(feature, latlng) {
     } else {
       popup += 'Failed to request details from osm.org';
     }
-    popup += '<b>Message:</b> ' + feature.message;
+    popup += '<b>Message:</b> ' + feature.properties.message;
     map.openPopup(popup, latlng);
   }
   xhr.send()
